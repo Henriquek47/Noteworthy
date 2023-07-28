@@ -9,16 +9,15 @@ body, html {
   background-color: #1C1C1C;
 }
 
-/* Add CSS for the navigation bar */
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-inline: 35px;
   padding-top: 25px;
+  z-index: 9999;
 }
 
-/* Add some styles for the logo */
 .logo {
   font-family: Italianno-Regular;
   font-size: 48px;
@@ -37,22 +36,22 @@ nav {
     display: flex;
 }
 
-.links ul {
+.options-list {
   list-style: none;
   margin: 0;
   padding-inline: 100px;
 }
 
-.links ul li {
+.options-list li {
   display: inline-block;
   margin-right: 20px;
 }
 
-.links ul li:last-child {
+.options-list li:last-child {
   margin-right: 0;
 }
 
-.links ul li a {
+.options-list li a {
     font-size: 18px;
     padding-inline: 20px;
     color: #C5C5C5;
@@ -78,7 +77,32 @@ nav {
 
 .search-box img{
     position: absolute;
+    z-index: 4;
     height: 15px;
     right: 20px;
     top: calc(50% - 7px);
+}
+
+.dropdown{
+  position: relative;
+  display: block;
+}
+
+.div-dropdown {
+  display: block;
+  position: absolute;
+  left: 0;
+  background-color: red;
+}
+
+.dropdown:hover .div-dropdown {
+  display: block;
+}
+
+.dropdown-content{
+  padding: 0;
+}
+
+.dropdown-content li {
+  display: block;
 }
