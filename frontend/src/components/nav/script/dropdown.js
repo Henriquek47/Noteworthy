@@ -1,9 +1,12 @@
-function toggleDropdown() {
-    var dropdown = document.getElementById('categorias-dropdown');
-    if (dropdown.style.display === 'block') {
-      dropdown.style.display = 'none';
-    } else {
-      dropdown.style.display = 'block';
-    }
+export default function toggleDropdown() {
+  var dropdownContent = document.getElementById("categorias-dropdown");
+
+  if(dropdownContent.classList.contains("show")) {
+    dropdownContent.classList.remove("show");
+  } else {
+    dropdownContent.classList.add("show");
+    console.log('tejadj')
   }
-  
+
+
+}

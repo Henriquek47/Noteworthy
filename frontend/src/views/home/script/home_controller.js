@@ -1,5 +1,5 @@
 export class HomeController {
-    loadComponent(componentName, pathName) {
+    loadComponent(componentName, pathName, callback) {
         // Defina a pasta onde estão os componentes
         var componentsPath = "../../../../src/components";
 
@@ -9,11 +9,10 @@ export class HomeController {
         link.href = componentsPath + "/" + pathName + "/style/" + componentName + ".css";
         document.head.appendChild(link);
 
-        // Carrega o HTML do componente e adiciona ao elemento com o ID fornecido
-        $("#" + componentName).load(componentsPath + "/" + pathName + "/html/" + componentName + ".html");
+        $("#" + componentName).load(componentsPath + "/" + pathName + "/html/" + componentName + ".html", callback);
     }
 
-    init() {
-        this.loadComponent('nav-bar', 'nav');
+    init(callback) {
+        this.loadComponent('nav-bar', 'nav', callback);
     }
 }
