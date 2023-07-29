@@ -1,3 +1,4 @@
+const path = require('path');
 module.exports = {
   mode: 'development',
   entry: './src/index.js', // ponto de entrada do seu código
@@ -12,8 +13,8 @@ module.exports = {
     extensions: ['.js'], // extensões a serem resolvidas
   },
   output: {
-    filename: 'main.js', // nome do arquivo de saída
-    path: path.resolve(__dirname, 'dist'), // caminho onde o arquivo de saída deve ser escrito
+    path: path.resolve(__dirname, 'dist'), // Caminho para a pasta de saída
+    filename: 'main.js', // Nome do arquivo de saída gerado pelo Webpack
   },
 };
 
