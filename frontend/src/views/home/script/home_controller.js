@@ -13,6 +13,5 @@ export class HomeController {
     }
 
     init(callback) {
-        this.loadComponent('nav-bar', 'nav', callback);
     }
 }

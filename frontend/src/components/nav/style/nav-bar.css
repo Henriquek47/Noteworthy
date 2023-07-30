@@ -108,12 +108,81 @@ nav {
 
 
 .dropdown-content{
+  display: grid;
   padding: 0;
   padding-left: 15px;
   padding-block: 10px;
 }
 
 .dropdown-content li {
-  display: block;
+  display: grid;
   padding-block: 5px;
+}
+
+.menu{
+  display: none;
+  height: 20px;
+}
+
+@media (max-width: 1150px){
+
+  .options-list{
+    padding-inline: 50px;
+  }
+
+  .options-list li {
+    display: inline-block;
+    margin-right: 50px;
+  }
+
+  .search-box input{
+    width: 150px;
+  }
+
+  .dropdown-content li {
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 950px){
+
+  .options-list{
+    padding-inline: 70px;
+  }
+
+  .options-list li {
+    display: inline-block;
+    margin-right: 25px;
+  }
+  .search-box input{
+    display: none;
+  }
+
+  .div-dropdown{
+    left: -75px;
+  }
+
+  .dropdown-content li {
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 670px){
+  .logo{
+    font-size: 35px;
+  }
+  .menu{
+    display: block;
+  }
+
+}
+
+@media (max-width: 330px){
+  .logo{
+    font-size: 35px;
+  }
+
+  .options-list{
+    display: none;
+  }
 }
