@@ -1,15 +1,14 @@
-import $ from 'jquery';
 import toggleDropdown from "./components/nav/script/dropdown.js";
 
 class Index {
     constructor() {
-        this.loadControllerForCurrentPage();
         this.loadNavBar('nav-bar', 'nav')
+        this.loadControllerForCurrentPage();
     }
 
 
     authVerify(pageName) {
-        const isLoggin = false;
+        const isLoggin = true;
         console.log(pageName !== 'categories' && pageName !== 'home' && isLoggin === false  )
         if (pageName !== 'categories' && pageName !== 'home' && isLoggin === false) {
             window.location.href = '/frontend/src/views/home/html/home.html';

@@ -47,10 +47,6 @@ nav {
   margin-right: 70px;
 }
 
-.options-list li:last-child {
-  margin-right: 0;
-}
-
 .options-list li a {
   font-size: 14px;
   color: #C5C5C5;
@@ -170,9 +166,25 @@ nav {
 @media (max-width: 670px){
   .logo{
     font-size: 35px;
-  }
+  } 
   .menu{
     display: block;
+  }
+  .options-list{
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    padding-inline: 0;
+    display: block;
+    background-color: #323232;
+    height: 100%;
+  }
+
+  
+  .options-list li {
+    display: block;
+    margin-bottom: 15px;
+    padding: 0;
   }
 
 }
