@@ -1,4 +1,5 @@
-import toggleDropdown from "./components/nav/script/dropdown.js";
+import toggleDropdown, { toggleDropdownMenu } from "./components/nav/script/dropdown.js";
+import expandedSearch from "./components/nav/script/expanded-search.js";
 
 class Index {
     constructor() {
@@ -63,16 +64,9 @@ class Index {
             });
         });
 
-        const dropdownLinks = document.querySelectorAll(".dropdown-link");
-        if (dropdownLinks.length > 0) {
-            dropdownLinks.forEach(link => {
-                link.addEventListener("click", function (event) {
-                    event.preventDefault(); // Evita que o link redirecione
-                    console.log(dropdownLinks);
-                    toggleDropdown();
-                });
-            });
-        }
+        toggleDropdown();
+        toggleDropdownMenu();
+        expandedSearch();
     }
 
 }
