@@ -39,7 +39,7 @@ nav {
 .options-list {
   list-style: none;
   margin: 0;
-  padding-inline: 100px;
+  padding-inline: 50px;
 }
 
 .options-list li {
@@ -143,15 +143,34 @@ nav {
 @media (max-width: 970px){
 
   .options-list{
-    padding-inline: 70px;
+    padding-inline: 0px;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.4s, visibility 0.4s;
   }
 
   .options-list li {
     display: inline-block;
     margin-right: 25px;
   }
-  .search-box input{
-    display: none;
+
+  .options-list.hidden {
+    opacity: 0; /* Torna o input visível quando expandido */
+    visibility: hidden;
+    height: 0;
+  }
+  
+  .search-box input {
+    width: 0;
+    position: relative;
+    overflow: hidden;
+    transition: width 0.4s, opacity 0.4s, visibility 0.4s;
+    opacity: 0; /* Esconde inicialmente o input */
+  }
+  
+  .search-box input.expanded {
+    width: 200px; /* A largura que você deseja quando expandido */
+    opacity: 1; /* Torna o input visível quando expandido */
   }
 
   .div-dropdown{
@@ -169,6 +188,7 @@ nav {
   } 
   .menu{
     display: block; 
+    padding-left: 20px;
   }
 
   ul{
