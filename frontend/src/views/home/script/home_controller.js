@@ -13,5 +13,6 @@ export class HomeController {
     }
 
     init(callback) {
+        console.log('tesetere');    
     }
 }

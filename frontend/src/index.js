@@ -18,17 +18,19 @@ class Index {
     }
 
     async loadControllerForCurrentPage() {
-        // Determina o nome da página baseado na URL
-        let pageName = window.location.pathname.split('/').pop();
-        // Remove a extensão .html se houver
-        pageName = pageName.split('.').shift();
+        // Pegue o nome do controlador do atributo data-controller no elemento body
+        let controllerName = document.body.dataset.controller;
 
-        const check = this.authVerify(pageName);
-        if(check){
-            await this.loadController(pageName);
+        if(controllerName){
+            const check = this.authVerify(controllerName);
+            if(check){
+                await this.loadController(controllerName);
+            }
+        } else {
+            console.error(`Não foi possível encontrar o nome do controlador na página atual.`);
         }
-        
     }
+
 
     async loadController(pageName) {
         // Nota: Estamos retornando a promessa aqui
