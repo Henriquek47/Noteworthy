@@ -1,4 +1,4 @@
-import toggleDropdown from "./components/nav/script/dropdown.js";
+import toggleDropdown, { toggleDropdownMenu } from "./components/nav/script/dropdown.js";
 
 class Index {
     constructor() {
@@ -68,8 +68,16 @@ class Index {
             dropdownLinks.forEach(link => {
                 link.addEventListener("click", function (event) {
                     event.preventDefault(); // Evita que o link redirecione
-                    console.log(dropdownLinks);
                     toggleDropdown();
+                });
+            });
+        }
+        const dropdownMenu = document.querySelectorAll(".menu");
+        if (dropdownMenu.length > 0) {
+            dropdownMenu.forEach(link => {
+                link.addEventListener("click", function (event) {
+                    event.preventDefault(); // Evita que o link redirecione
+                    toggleDropdownMenu();
                 });
             });
         }
