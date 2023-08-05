@@ -47,27 +47,36 @@ class Index {
 
 
     async loadNavBar(componentName, pathName) {
-        var componentsPath = "../../../components";
-
-        var link = document.createElement("link");
-        link.rel = "stylesheet";
-        link.href = componentsPath + "/" + pathName + "/style/" + componentName + ".css";
-        document.head.appendChild(link);
-
-        await new Promise((resolve, reject) => {
-            $("#" + componentName).load(componentsPath + "/" + pathName + "/html/" + componentName + ".html", (response, status, xhr) => {
-                if (status == "error") {
-                    reject(xhr.status + ": " + xhr.statusText);
-                } else {
-                    resolve(response);
-                }
-            });
-        });
-
+        const componentsPath = "../../../components";
+    
+        this.loadStylesheet(componentsPath, pathName, componentName);
+        await this.loadHTML(componentsPath, pathName, componentName);
+        
         toggleDropdown();
         toggleDropdownMenu();
         expandedSearch();
     }
+    
+    loadStylesheet(componentsPath, pathName, componentName) {
+        var link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = `${componentsPath}/${pathName}/style/${componentName}.css`;
+        document.head.appendChild(link);
+    }
+    
+    async loadHTML(componentsPath, pathName, componentName) {
+        try {
+            const response = await fetch(`${componentsPath}/${pathName}/html/${componentName}.html`);
+            if (response.status !== 200) {
+                throw new Error(`${response.status}: ${response.statusText}`);
+            }
+            const html = await response.text();
+            document.getElementById(componentName).innerHTML = html;
+        } catch (err) {
+            console.error(`Erro ao carregar HTML do componente ${componentName}: `, err);
+        }
+    }
+    
 
 }
 
