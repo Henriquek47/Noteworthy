@@ -1,6 +1,122 @@
-/* Remove default margin and padding */
+
+@font-face {
+  font-family: Just-Me-Again-Down-Here;
+  src: url(../../../assets/JustMeAgainDownHere-Regular.ttf);
+}
+
+
 body, html {
   margin: 0;
   padding: 0;
   background-color: #1C1C1C;
+}
+main{
+  max-width: 1800px;
+  margin: auto;
+}
+
+.wrapper{
+  padding-top: 10px;
+}
+
+.wrapper .carousel{
+  height: 600px;
+  display: flex;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  align-items: center;
+}
+
+.card{
+  height: 409px;
+  width: 736px;
+  margin-left: 15px;
+  background-color: #D27E00;
+  border-radius: 20px;
+  margin-right: 55px;
+  transition: height 0.4s ease;
+  flex-shrink: 0;
+  box-shadow: 0px 0px 60px -30px rgb(206, 206, 206);
+  font-family: Just-Me-Again-Down-Here;
+}
+
+.card-center {
+  height: 450px;
+  box-shadow: 0px 0px 60px -40px rgb(206, 206, 206);
+  transition: height 0.3s ease; 
+}
+
+.flex-direction{
+  display: flex;
+  position: relative;
+}
+
+.instrument-img{
+  position: absolute;
+  top: -50px;
+  left: 500px;
+}
+
+.instrument-img img{
+  height: 450px;
+}
+
+.informations h1{
+  font-weight: 200;
+  font-size: 64px;
+  margin: 0;
+  margin-top: 20px;
+  padding-left: 40px;
+}
+
+.informations h2{
+  font-weight: 100;
+  font-size: 50px;
+  margin: 0;
+  padding-top: 0;
+  padding-left: 250px;
+  color: white;
+}
+
+.informations p{
+  font-weight: 100;
+  font-size: 32px;
+  margin: 0;
+  padding-top: 0;
+  padding-left: 40px;
+  color: white;
+}
+
+.informations .filter-button{
+  font-family: Just-Me-Again-Down-Here;
+  background-color: #343434;
+  border: none;
+  height: 45px;
+  width: 173px;
+  border-radius: 5px;
+  margin-top: 40px;
+  margin-left: 45px;
+  font-size: 35px;
+  text-align: center;
+  color: white;
+  line-height: 0px;
+  box-shadow: 0px 0px 80px -20px rgb(255, 255, 255);
+  transition: margin 0.3s ease; 
+}
+
+.informations .filter-button.buttom-margin{
+  margin-top: 10px;
+  transition: margin 0.3s ease; 
+}
+
+.space{
+  margin-left: 15px;
+  background-color: transparent;
+  border-radius: 20px;
+  margin-right: 55px;
+  width: 595px;
+  height: 409px;
+  flex-shrink: 0;
 }

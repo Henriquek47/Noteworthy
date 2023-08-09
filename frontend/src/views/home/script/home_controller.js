@@ -12,6 +12,69 @@ export class HomeController {
         $("#" + componentName).load(componentsPath + "/" + pathName + "/html/" + componentName + ".html", callback);
     }
 
+
+    centerCard() {
+        const cards = document.querySelectorAll('.card');
+        const wrapper = document.querySelector('.wrapper');
+        let closestCardIndex = 0;
+        let closestDistance = Infinity;
+    
+        Array.from(cards).forEach((card, index) => {
+            let distanceToCenter = Math.abs((card.offsetLeft + (card.offsetWidth / 2) + parseInt(window.getComputedStyle(card).marginLeft) - document.querySelector('.carousel').scrollLeft) - wrapper.offsetWidth / 2);
+            if (distanceToCenter < closestDistance) {
+                closestCardIndex = index;
+                closestDistance = distanceToCenter;
+            }
+        });
+    
+        cards.forEach(card => {
+            card.classList.remove("card-center");
+            card.classList.remove("first-card");
+            card.querySelector('.informations button').classList.add('buttom-margin');
+        });
+    
+        const cardToCenter = cards[closestCardIndex];
+        cardToCenter.classList.add("card-center");
+        cardToCenter.querySelector('.informations button').classList.remove('buttom-margin');
+    
+        const centerPosition = cardToCenter.offsetLeft - (wrapper.offsetWidth - cardToCenter.offsetWidth) / 2 - parseInt(window.getComputedStyle(cardToCenter).marginLeft);
+    
+        document.querySelector('.carousel').scrollTo({
+            left: centerPosition,
+            behavior: 'smooth'
+        });
+    }
+
+    moveCarousel() {
+        let isDragStart = false, prevPageX, prevScrollLeft;
+        const carousel = document.querySelector('.carousel');
+
+        const dragStart = (e) => {
+            isDragStart = true;
+            prevPageX = e.pageX;
+            prevScrollLeft = carousel.scrollLeft;
+        }
+
+        const dragStop = () => {
+            isDragStart = false;
+            this.centerCard();
+        }
+
+        const dragging = (e) => {
+            if (!isDragStart) return;
+            let positionDiff = e.pageX - prevPageX;
+            e.preventDefault();
+            carousel.scrollLeft = prevScrollLeft - positionDiff;
+        }
+
+        carousel.addEventListener("mousedown", dragStart);
+        carousel.addEventListener("mouseup", dragStop);
+        carousel.addEventListener("mousemove", dragging);
+        carousel.addEventListener("mouseleave", dragStop);
+    }
+
     init(callback) {
+        this.moveCarousel();
+        this.centerCard();
     }
 }
