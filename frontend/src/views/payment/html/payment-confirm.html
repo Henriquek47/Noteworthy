@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/payment.css">
+    <script type="module" src="../../../../dist/main.js"></script>
+    <title>Pagamento</title>
+</head>
+<body>
+    <div id="nav-bar"></div>
+    <main class="main-content">
+        <div class="container">
+            <div class="address-wrapper">
+                <h2>Finalizar compra</h2>
+                <form action="process_payment.php" method="post">
+                    <div class="payment-options">
+                        <div class="pay-option1">                            
+                            <img src="../../../assets/icons/icon_pix.png" alt="pix">
+                            <p>Pix</p> 
+                            <input type="radio" name="paymentMethod" value="pix">
+                        </div>
+                        <div class="pay-option2">                            
+                            <img src="../../../assets/icons/icon_card.png" alt="Credit card">
+                            <p>Cartão de crédito<br> ou débito</p>
+                            <input type="radio" name="paymentMethod" value="creditCard">
+                        </div>
+                    </div>
+                    <input id="btn-pay" type="submit" value="Pagar">
+                </form> 
+                <p id="disclaimer">Atenção antes da compra confirme seu interesse <br> com o vendedor.</p>
+                <p id="details">Detalhes do pedido</p>
+                <div class="order">
+                    <img src="../../../assets/imgs/small_guitar.png" alt="Guitarra">
+                    <p class="order-desc">Fender Stratocaster</p>
+                    <p>R$ 569,00</p>
+                </div>
+            </div>
+            <div class="summary">
+                <h2>Resumo</h2>
+                <div class="itens">
+                    <p>Itens:</p>
+                    <p>1</p>
+                </div>
+                <div class="price">
+                    <p>Preço:</p>
+                    <p>R$ 569,00</p>
+                </div>
+                <div class="total">
+                    <p>Total:</p>
+                    <p>R$ 569,00</p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

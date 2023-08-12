@@ -1,0 +1,214 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.address-wrapper {    
+    width: 473px;
+    height: 499px;
+    background-color: rgba(255, 241, 214, 1);
+    border-radius: 25px 0px 0px 15px;
+}
+
+.address-wrapper h2 {
+    position: relative;
+    left: 40px;
+    width: 200px;
+    font-size: 24px;
+    color: rgba(0, 0, 0, 1);
+}
+
+.address-wrapper label {
+    color: rgba(75, 75, 75, 1);
+    position: relative;
+    right: 70px;
+}
+
+.address-wrapper form {
+    position: relative;
+    left: 150px;
+    width: 400px;
+}
+
+    .spaced-input {
+        position: absolute;
+        right: 190px;
+        width: 200px;
+        box-shadow: 0px 4px 27px -7px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        border: none;
+    }
+
+    .spaced-input:hover {
+        box-shadow: 0px 4px 27px 5px rgba(251, 251, 251, 0.402);
+        background-color: #FFF;
+        border: .1px solid rgb(255, 166, 0);
+    }
+
+    #complement {
+        position: absolute;
+        top:215px;
+        right: 288px;
+        width: 180px;
+        height: 60px;
+        box-shadow: 0px 4px 27px -7px rgba(0, 0, 0, 0.25);
+        border: none;
+    }    
+
+    #complement:hover {
+        box-shadow: 0px 4px 27px 5px rgba(251, 251, 251, 0.402);
+        background-color: #FFF;
+        border: .1px solid rgb(255, 166, 0);
+    }
+
+    #goto-payment {
+        position: absolute;
+        top:305px;
+        left: 420px;
+        color: rgb(26, 24, 24);
+        box-shadow: 0px 4px 27px 5px rgba(0, 0, 0, 0.25);
+        border: none;
+        border-radius: 10px;
+        font-size: 18px;
+        width: 148px;
+        height: 74px;
+    }
+
+    #goto-payment:hover {
+        box-shadow: 0px 4px 27px 5px rgba(251, 251, 251, 0.402);
+        background-color: #FFF;
+        border: .1px solid rgb(255, 166, 0);
+    }
+
+textarea{
+    resize: none;
+}
+
+.pay-option1 {
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 50px;
+    right: 78px;
+    width: 350px;
+    height: 36px;
+    background-color: rgba(255, 254, 254, 1);
+    font-size: 14px;
+    color: rgba(120, 120, 120, 1);
+    border-radius: 5px 5px 0 0;
+}
+
+.pay-option2 {
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 50px;
+    right: 78px;
+    width: 350px;
+    height: 36px;
+    background-color: rgba(255, 254, 254, 1);
+    font-size: 14px;
+    color: rgba(120, 120, 120, 1);
+    border-radius: 0 0 5px 5px;
+}
+
+.pay-option1 img, .pay-option2 img {
+    width: 36px;
+    height: 31px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.pay-option1 input[type="radio"], .pay-option2 input[type="radio"] {
+    position: absolute;
+    left:315px
+}
+
+#btn-pay {
+    position: absolute;
+    right:-140px;
+    top: 350px;
+    width: 128px;
+    height: 38px;
+    color: rgb(26, 24, 24);
+    box-shadow: 0px 4px 27px 5px rgba(0, 0, 0, 0.25);
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+#btn-pay:hover {
+    box-shadow: 0px 4px 27px 5px rgba(251, 251, 251, 0.402);
+    background-color: #FFF;
+    border: .1px solid rgb(255, 166, 0);
+}
+
+#disclaimer {
+    position: relative;
+    text-align: center;
+    top: 70px;
+    left: 10px;
+    color: rgba(102, 102, 102, 1);
+}
+
+#details {
+    position: relative;
+    text-align: start;
+    top: 100px;
+    left: 78px;
+    color: rgba(0, 0, 0, 1);
+}
+
+.order {
+    display: flex;
+    position: relative;
+    top: 90px;
+    align-items: center;
+    left: 100px;
+}
+
+.order img {
+    width: 34px;
+    height: 31px;
+    padding-right: 15px;
+}
+
+.order-desc {
+    padding-right: 70px;
+}
+
+.summary {
+    width: 280px;
+    height: 499px;
+    background-color: rgba(210, 126, 0, 1);
+    border-radius: 0px 5px 5px 0px;
+    font-size: 18px;
+}
+
+    .summary h2 {
+        position: relative;
+        left: 25px;
+        font-size: 24px;
+        color:rgba(255, 255, 255, 1);
+    }
+
+.itens, .price, .total {
+    display: flex;
+    position: relative;
+    color: rgba(255, 255, 255, 1);
+}
+
+.itens, .price {
+    left: 25px;
+}
+
+.total {
+    left: 85px;
+    top: 25px;
+    font-weight: bold;
+}
