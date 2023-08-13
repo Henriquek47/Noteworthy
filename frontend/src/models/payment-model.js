@@ -5,6 +5,7 @@ export default class Payment {
       this.toUserId = data.toUserId;
       this.amount = data.amount;
       this.method = data.method;
+      this.address = data.address
       this.date = new Date(data.date);
     }
   }
