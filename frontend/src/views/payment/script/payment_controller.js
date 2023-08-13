@@ -31,6 +31,33 @@ export class PaymentController {
         });
     }
 
+    createOrderDetails(orderDetails) {
+        const template = document.createElement('template');
+        template.innerHTML = `<div class="order">
+        <img src="${orderDetails.pictures[0]}" alt="Guitarra">
+        <p class="order-desc">Fender Stratocaster</p>
+        <p>R$ ${orderDetails.price}</p>
+    </div>
+    </div>
+    <div class="summary">
+    <h2>Resumo</h2>
+    <div class="itens">
+        <p>Itens:</p>
+        <p>1</p>
+    </div>
+    <div class="price">
+        <p>Preço:</p>
+        <p>R$ ${orderDetails.price}</p>
+    </div>
+    <div class="total">
+        <p>Total:</p>
+        <p>R$ ${orderDetails.price}</p>
+    </div>
+    </div>`
+    
+        return template.content.firstChild;
+    }
+
     loadComponent(componentName, pathName) {
         // Defina a pasta onde estão os componentes
         var componentsPath = "../../../../src/components";
@@ -46,5 +73,7 @@ export class PaymentController {
 
     init() {
         this.sendAddressDetails();
+        //const orderContainer = document.getElementById('order-details-container');
+        //orderContainer.appendChild(this.createOrderDetails(Post()));
     }
 }
