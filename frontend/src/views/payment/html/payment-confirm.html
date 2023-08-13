@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/payment.css">
     <script type="module" src="../../../../dist/main.js"></script>
-    <title>Pagamento</title>
+    <script src="../script/payment-data-get.js"></script>   
+    <title>Pagamento</title>        
 </head>
 <body>
     <div id="nav-bar"></div>
@@ -13,7 +14,7 @@
         <div class="container">
             <div class="address-wrapper">
                 <h2>Finalizar compra</h2>
-                <form action="process_payment.php" method="post">
+                <form action="../script/process_payment.php" method="post">
                     <div class="payment-options">
                         <div class="pay-option1">                            
                             <img src="../../../assets/icons/icon_pix.png" alt="pix">
@@ -26,6 +27,12 @@
                             <input type="radio" name="paymentMethod" value="creditCard">
                         </div>
                     </div>
+                    <input type="hidden" id="city" name="city">
+                    <input type="hidden" id="neighborhood" name="neighborhood">
+                    <input type="hidden" id="street" name="street">
+                    <input type="hidden" id="number" name="number">
+                    <input type="hidden" id="cep" name="cep">
+                    <input type="hidden" id="complement" name="complement">
                     <input id="btn-pay" type="submit" value="Pagar">
                 </form> 
                 <p id="disclaimer">Atenção antes da compra confirme seu interesse <br> com o vendedor.</p>

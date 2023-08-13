@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/payment.css">
-    <script type="module" src="../../../../dist/main.js"></script>
-    <title>Pagamento</title>
+    <script src="../script/payment-data-set.js"></script>  
+    <script type="module" src="../../../../dist/main.js"></script>    
+    <title>Pagamento</title>  
 </head>
 <body>
     <div id="nav-bar"></div>
@@ -13,7 +14,7 @@
         <div class="container">
             <div class="address-wrapper">
                 <h2>Sua Localização</h2>
-                <form action="payment-confirm.html">
+                <form id="address-form" action="payment-confirm.html" method="post">
                     <label for="city">Cidade:</label>
                     <input type="text" class="spaced-input" id="city" name="city"><br><br>
                     
