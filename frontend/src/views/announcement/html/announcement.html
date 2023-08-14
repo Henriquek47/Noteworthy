@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/style.css">
+    <script type="module" src="../../../../dist/main.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="nav-bar"></div>
+    <div class="content-wrapper">
+        <div class="form-container">
+            <div class="form-left">
+                <div class="image-box">                    
+                    <div class="add-image">+</div>
+                </div>
+                <div class="image-box2">
+
+                </div>
+            </div>
+            <div class="form-right">
+                <form>
+                    <label for="produto"></label>
+                    <input class="row" id="produto" name="produto" required placeholder="Nome do Produto:"><br><br>
+                    
+                    <label for="descricao"></label>
+                    <input class="row" type="text" id="descricao" name="descricao" rows="4" required placeholder="Descrição:"></input><br><br>
+                    
+                    <label class="instr" for="instrumento" >Qual Instrumento:</label>
+                    <select class="tipo-inst" id="instrumento" name="instrumento">
+                        <option value=""></option>
+                        <option value="violao">Violão</option>
+                        <option value="guitarra">Guitarra</option>
+                        <option value="teclado">Teclado</option>
+                        <option value="bateria">Bateria</option>
+                    </select><br><br>
+                    
+                    <label for="preco"></label>
+                    <input class="row1" class="row" type="text" id="preco" name="preco" step="0.01" required placeholder="Preço:"<br><br>
+                    
+                    <label class="instr" for="tipo-envio" >Tipo de Envio:</label>
+                    <select class= "tipo-env" id="tipo-envio" name="tipo-envio">
+                        <option value=""></option>
+                        <option value="normal">Normal</option>
+                        <option value="expresso">Expresso</option>
+                    </select><br><br>
+                </form>
+                <button type="submit" class="confirm-button">Confirmar</button>
+            </div>           
+        </div>
+
+        
+    </div>
+    
+</body>
+</html>
