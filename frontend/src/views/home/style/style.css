@@ -4,6 +4,11 @@
   src: url(../../../assets/JustMeAgainDownHere-Regular.ttf);
 }
 
+#recommendations {
+  max-width: 1800px;
+  margin: auto;
+}
+
 
 body, html {
   margin: 0;

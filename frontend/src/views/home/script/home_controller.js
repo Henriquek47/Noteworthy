@@ -1,17 +1,32 @@
 export class HomeController {
-    loadComponent(componentName, pathName, callback) {
-        // Defina a pasta onde estão os componentes
-        var componentsPath = "../../../../src/components";
+    async loadComponent(componentName, pathName) {
+        const componentsPath = "../../../components";
 
-        // Carrega o arquivo de estilo do componente de forma assíncrona usando a tag <link>
-        var link = document.createElement("link");
-        link.rel = "stylesheet";
-        link.href = componentsPath + "/" + pathName + "/style/" + componentName + ".css";
-        document.head.appendChild(link);
-
-        $("#" + componentName).load(componentsPath + "/" + pathName + "/html/" + componentName + ".html", callback);
+        this.loadStylesheet(componentsPath, pathName, componentName);
+        await this.loadHTML(componentsPath, pathName, componentName);
     }
 
+    loadStylesheet(componentsPath, pathName, componentName) {
+        console.log(`${componentsPath}/${pathName}/style/${componentName}.css`);
+        var link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = `${componentsPath}/${pathName}/style/${componentName}.css`;
+        document.head.appendChild(link);
+    }
+
+    async loadHTML(componentsPath, pathName, componentName) {
+        console.log(`${componentsPath}/${pathName}/html/${componentName}.html`);
+        try {
+            const response = await fetch(`${componentsPath}/${pathName}/html/${componentName}.html`);
+            if (response.status !== 200) {
+                throw new Error(`${response.status}: ${response.statusText}`);
+            }
+            const html = await response.text();
+            document.getElementById(componentName).innerHTML = html;
+        } catch (err) {
+            console.error(`Erro ao carregar HTML do componente ${componentName}: , err`);
+        }
+    }
 
     centerCard() {
         const cards = document.querySelectorAll('.card');
@@ -73,8 +88,13 @@ export class HomeController {
         carousel.addEventListener("mouseleave", dragStop);
     }
 
+    recommendationsLoaded () {
+        console.log("Teste");
+    }
+
     init(callback) {
         this.moveCarousel();
         this.centerCard();
+        this.loadComponent("recommendations", "recommendation");
     }
 }
