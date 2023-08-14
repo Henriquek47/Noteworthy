@@ -4,17 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/payment.css">
-    <script src="../script/payment-data-set.js"></script>  
     <script type="module" src="../../../../dist/main.js"></script>    
     <title>Pagamento</title>  
 </head>
-<body>
+<body data-controller="payment">
     <div id="nav-bar"></div>
     <main class="main-content">
         <div class="container">
             <div class="address-wrapper">
                 <h2>Sua Localização</h2>
-                <form id="address-form" action="payment-confirm.html" method="post">
+                <form class="address-form-class" id="address-form" action="" method="post">
                     <label for="city">Cidade:</label>
                     <input type="text" class="spaced-input" id="city" name="city"><br><br>
                     
