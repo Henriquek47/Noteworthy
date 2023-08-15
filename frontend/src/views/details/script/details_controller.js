@@ -1,10 +1,14 @@
 export class DetailsController {
 
-    handlePayment() {
-        console.log("Tratar os dados de pedido e ir para o pagamento.")
+    async loadPosts(){
+        const posts = await this.apiPosts.getData();
+        posts.forEach(async post => {
+            createPost(post);
+        });
     }
 
     init(callback) {
         this.handlePayment();
+        this.loadPosts();
     }
 }

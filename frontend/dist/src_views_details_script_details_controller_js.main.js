@@ -15,7 +15,7 @@
   \********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   DetailsController: () => (/* binding */ DetailsController)\n/* harmony export */ });\nclass DetailsController {\r\n\r\n    handlePayment() {\r\n        console.log(\"Tratar os dados de pedido e ir para o pagamento.\")\r\n    }\r\n\r\n    init(callback) {\r\n        this.handlePayment();\r\n    }\r\n}\r\n\n\n//# sourceURL=webpack://frontend/./src/views/details/script/details_controller.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   DetailsController: () => (/* binding */ DetailsController)\n/* harmony export */ });\nclass DetailsController {\r\n\r\n    async loadPosts(){\r\n        const posts = await this.apiPosts.getData();\r\n        posts.forEach(async post => {\r\n            createPost(post);\r\n        });\r\n    }\r\n\r\n    init(callback) {\r\n        this.handlePayment();\r\n        this.loadPosts();\r\n    }\r\n}\r\n\n\n//# sourceURL=webpack://frontend/./src/views/details/script/details_controller.js?");
 
 /***/ })
 
