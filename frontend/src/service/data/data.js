@@ -20,6 +20,7 @@ export default class API {
     }
 
     async postData(body) {
+        console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaa');
         try {
             const response = await fetch(this.url, {
                 method: 'POST',

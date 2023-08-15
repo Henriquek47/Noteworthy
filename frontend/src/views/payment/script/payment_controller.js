@@ -1,5 +1,3 @@
-import Address from "../../../models/address-model";
-import Payment from "../../../models/payment-model";
 import API from "../../../service/data/data";
 
 export class PaymentController {
