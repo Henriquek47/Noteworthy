@@ -1,26 +1,31 @@
-export  function createPost(post){
+export  function createPost(){
     const postContainer = document.getElementById('postContainer');
-    postContainer.appendChild(createTemplate(post));
+    console.log(postContainer);
+    postContainer.appendChild(createTemplate());
 }
 
 
-function createTemplate(post){
-    console.log(`${post.title}`)
+function createTemplate(){
     const template = document.createElement('template');
         template.innerHTML = `
         <hr class="separator">    
-        <div class="content"> <div class="photo">
-        <img src="http://localhost/post/${post.id}/image" alt="${post.instrument}" crossorigin="anonymous">
-    </div>
-    <div class="info">
-        <h3>${post.title}</h3>
-        <p class="grey-text">${post.address == null ? 'Endereço não especificado' : post.address.city}</p>
-    </div>
-    <div class="info2">
-        <h3 class="price">${post.price} R$</h3>
-        <button class="btn-comprar">Comprar</button>
-        <button class="btn-comprar">Ver detalhes</button>
-    </div> </div>`
+        <div class="content"> 
+            <div class="photo">
+                <img src="../../../assets/imgs/image2.png" alt="Guitarra" crossorigin="anonymous">
+            </div>
+            <div class="info">
+                <h3 class="rec-title">Guitarra Stratocaster</h3>
+                <p class="announcer"><span>Anunciante:</span> Diego Candido</p>
+                <p class="grey-text">Endereço:</p>
+            </div>
+            <div class="info2">
+                <h3 class="price">R$499</h3>
+                <div class="buttons">
+                    <button class="btn-comprar">Comprar</button>
+                    <button class="btn-details">Ver detalhes</button>
+                </div>                
+            </div> 
+        </div>`
 
         return template.content;
 }
