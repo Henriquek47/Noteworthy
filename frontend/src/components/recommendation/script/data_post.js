@@ -11,7 +11,9 @@ function createTemplate(post){
         <hr class="separator">    
         <div class="content"> 
             <div class="photo">
+            <a href="../../../views/details/html/details.html?id=${post.id}">
                 <img src="http://localhost/post/${post.id}/image" alt="${post.instrument}" crossorigin="anonymous">
+                </a>
             </div>
             <div class="info">
                 <h3 class="rec-title">${post.title}</h3>
