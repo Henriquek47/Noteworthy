@@ -9,6 +9,7 @@ export default class API {
                 "Content-Type": "application/json"
                 // Você pode adicionar mais cabeçalhos aqui, se necessário
             } });
+            console.log(response);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }

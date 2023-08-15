@@ -1,4 +1,11 @@
+import { createPost } from "../../../components/recommendation/script/data_post";
+import API from "../../../service/data/data";
+
 export class HomeController {
+    constructor() {
+        this.apiPosts = new API("http://localhost/post/list");
+    }
+
     async loadComponent(componentName, pathName) {
         const componentsPath = "../../../components";
 
@@ -88,9 +95,17 @@ export class HomeController {
         carousel.addEventListener("mouseleave", dragStop);
     }
 
-    init(callback) {
+    async loadPosts(){
+        const posts = await this.apiPosts.getData();
+        posts.forEach(async post => {
+            createPost(post);
+        });
+    }
+
+    init() {
         this.moveCarousel();
         this.centerCard();
         this.loadComponent("recommendations", "recommendation");
+        this.loadPosts();
     }
 }
