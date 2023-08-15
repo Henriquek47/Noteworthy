@@ -1,14 +1,17 @@
+import API from "../../../service/data/data";
+
 export class DetailsController {
 
-    async loadPosts(){
-        const posts = await this.apiPosts.getData();
-        posts.forEach(async post => {
-            createPost(post);
-        });
+    constructor() {
+        this.apiDetails = new API("http://localhost/post");
+    }
+
+    async loadDetails() {
+        const details = await this.apiDetails.getData(`${post.id}`);
+        createDetails(details);        
     }
 
     init(callback) {
-        this.handlePayment();
-        this.loadPosts();
+        this.loadDetails();
     }
 }

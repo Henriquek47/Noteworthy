@@ -4,8 +4,10 @@ import API from "../../../service/data/data";
 export class HomeController {
     constructor() {
         this.apiPosts = new API("http://localhost/post/list");
+        this.apiDetails = new API("http://localhost/post");
     }
 
+    
     async loadComponent(componentName, pathName) {
         const componentsPath = "../../../components";
 
@@ -100,7 +102,7 @@ export class HomeController {
         posts.forEach(async post => {
             createPost(post);
         });
-    }
+    }    
 
     init() {
         this.moveCarousel();

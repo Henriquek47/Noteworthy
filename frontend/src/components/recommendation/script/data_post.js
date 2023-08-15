@@ -19,6 +19,7 @@ function createTemplate(post){
     <div class="info2">
         <h3 class="price">${post.price} R$</h3>
         <button class="btn-comprar">Comprar</button>
+        <button class="btn-comprar">Ver detalhes</button>
     </div> </div>`
 
         return template.content;
