@@ -88,10 +88,6 @@ export class HomeController {
         carousel.addEventListener("mouseleave", dragStop);
     }
 
-    recommendationsLoaded () {
-        console.log("Teste");
-    }
-
     init(callback) {
         this.moveCarousel();
         this.centerCard();

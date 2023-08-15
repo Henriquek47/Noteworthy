@@ -1,0 +1,83 @@
+.main-content {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 500px;
+    height: 480px;
+}
+    .container h2 {
+        color: rgba(198, 198, 198, 1);
+        font-size: 26px;
+        margin: 0;
+        margin-top: 10px;
+    }
+
+#description-title {
+    padding-top: 20px;
+    padding-left: 40px;
+    color: #fff;
+}
+
+#description {
+    padding-left: 40px;
+    color: rgba(190, 190, 190, 1);
+    text-align: justify;
+    max-width: 410px;
+}
+
+.img-background{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: 35px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    width: 430px;
+    height: 222px;
+    border-radius: 10px;
+    background-color: rgba(61, 61, 61, 1);
+}
+
+.info-wrapper {
+    display: flex;
+    justify-content: space-evenly;    
+}
+
+#address {
+    color: rgba(150, 134, 134, 1);
+    font-size: 18px;
+    margin: 0;
+}
+
+#announcer-name {
+    color: rgba(207, 207, 207, 1);
+    margin: 0;
+    margin-top: 18px;
+}
+
+span {
+    color: rgba(210, 126, 0, 1);
+}
+
+.buy {
+    position: relative;
+    right: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(184, 110, 0, 1);
+    box-shadow: 0px 4px 36px -6px rgba(255, 255, 255, 0.25);
+    color: #FFF;
+    font-size: 18px;
+    width: 120px;
+    height: 35px;
+    margin-top: 30px;
+}
+
+.buy:hover {
+    box-shadow: 0px 4px 36px -6px rgba(255, 255, 255, 0.638);
+    background-color: rgb(210, 130, 9);
+}
