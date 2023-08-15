@@ -1,32 +1,34 @@
-export  function createPost(details){
+export function createDetails(details) {
     const detailsContainer = document.getElementById('detailsContainer');
     detailsContainer.appendChild(createTemplate(details));
 }
 
 
-function createTemplate(details){
+function createTemplate(details) {
     console.log(`${details.title}`)
     const template = document.createElement('template');
-        template.innerHTML = `
+    template.innerHTML = `
         <div class="container">
             <div class="img-background">
-                <img src="../../../assets/imgs/image2.png" alt="Guitarra">
+                <img src="http://localhost/post/${details.id}/image" alt="Guitarra" crossorigin="anonymous">
             </div>
             <div class="info-wrapper">
                 <div class="info">
-                    <h2>Fender Stratocaster</h2>
-                    <p id="address">BAHIA, Feira de Santana, DDD 75</p>
-                    <p id="announcer-name"><span>Anunciante:</span> Daniel Santos</p>
+                    <h2>${details.title}</h2>
+                    <p id="address">${details.address == null ? 'Endereço não especificado' : details.address.city}</p>
+                    <p id="announcer-name"><span>Anunciante:</span> ${details.authorId}</p>
                 </div>
                 <div class="info2">
-                    <h2>R$549,00</h2>
+                    <h2>R$${details.price}</h2>
                     <button onclick="handlePayment()" class="buy">Comprar</button>
                 </div>
             </div>
-            <p id="description-title">Descrição:</p>
-            <p id="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <div class="description-container">
+                <p class="description-title">Descrição:</p>
+                <p class="description">${details.description}</p>
+            </div>
             
         </div>`
 
-        return template.content;
+    return template.content;
 }
