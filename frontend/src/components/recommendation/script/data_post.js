@@ -1,25 +1,25 @@
-export  function createPost(){
+export  function createPost(post){
     const postContainer = document.getElementById('postContainer');
     console.log(postContainer);
-    postContainer.appendChild(createTemplate());
+    postContainer.appendChild(createTemplate(post));
 }
 
 
-function createTemplate(){
+function createTemplate(post){
     const template = document.createElement('template');
         template.innerHTML = `
         <hr class="separator">    
         <div class="content"> 
             <div class="photo">
-                <img src="../../../assets/imgs/image2.png" alt="Guitarra" crossorigin="anonymous">
+                <img src="http://localhost/post/${post.id}/image" alt="${post.instrument}" crossorigin="anonymous">
             </div>
             <div class="info">
-                <h3 class="rec-title">Guitarra Stratocaster</h3>
-                <p class="announcer"><span>Anunciante:</span> Diego Candido</p>
-                <p class="grey-text">Endereço:</p>
+                <h3 class="rec-title">${post.title}</h3>
+                <p class="announcer"><span>Anunciante:</span> ${post.authorId}</p>
+                <p class="grey-text">Endereço: ${post.address != null ? post.address.city : 'Endereço não informado'}</p>
             </div>
             <div class="info2">
-                <h3 class="price">R$499</h3>
+                <h3 class="price">R$${post.price}</h3>
                 <div class="buttons">
                     <button class="btn-comprar">Comprar</button>
                     <button class="btn-details">Ver detalhes</button>
