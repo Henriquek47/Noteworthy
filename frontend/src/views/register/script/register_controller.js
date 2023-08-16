@@ -2,13 +2,12 @@ import API from "../../../service/data/data";
 
 export class RegisterController {
     constructor() {
-        this.apiLogin = new API("http://localhost/login");
+        this.apiLogin = new API("http://localhost/signup");
     }
 
     async sendSignUp() {
         const self = this;
         document.getElementById('signup-form').addEventListener('submit', async function (event) {
-            // Evita que o formulário seja enviado e a página seja recarregada
             event.preventDefault();
             const emailElement = document.getElementById('email').value;
             const nomeElement = document.getElementById('nome').value;
@@ -30,6 +29,10 @@ export class RegisterController {
                     'number': numeroElement,
                     'complement': '',
                 },
+            }).then((value) => {
+                if(value['message'] === "User created successfully!"){
+                    window.location.href = 'http://127.0.0.1:5501/frontend/src/views/home/html/index.html';
+                }
             })
             event.preventDefault();
         });

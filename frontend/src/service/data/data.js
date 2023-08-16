@@ -5,22 +5,49 @@ export default class API {
 
     async getData(pathParameters) {
         try {
-            const response = await fetch(`${this.url}${pathParameters != null ? `/${pathParameters}` : ''}`, { headers: {
-                "Content-Type": "application/json"
-                // Você pode adicionar mais cabeçalhos aqui, se necessário
-            } });
-            console.log(response);
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return await response.json();
+            const response = await fetch(`${this.url}${pathParameters != null ? `/${pathParameters}` : ''}`, {
+                headers: {
+                    "Content-Type": "application/json"
+                    // Você pode adicionar mais cabeçalhos aqui, se necessário
+                },
+                cores: true,
+                credentials: 'include',
+            });
+            const responseData = await response.json();
+            return responseData;
         } catch (err) {
             console.error('Failed to fetch data: ', err);
+            return null;
         }
     }
 
     async postData(body) {
-        console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaa');
+        try {
+            const response = await fetch(this.url, {
+                method: 'POST',
+                cores: true,
+                credentials: 'include',
+                headers: {
+                    "Content-Type": "application/json"
+                    // Você pode adicionar mais cabeçalhos aqui, se necessário
+                },
+                body: JSON.stringify(body),
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const responseData = await response.json();
+            return responseData;
+
+        } catch (err) {
+            console.error('Failed to fetch data: ', err);
+            return null;
+        }
+    }
+
+    async post(body) {
         try {
             const response = await fetch(this.url, {
                 method: 'POST',
@@ -29,16 +56,21 @@ export default class API {
                     // Você pode adicionar mais cabeçalhos aqui, se necessário
                 },
                 body: JSON.stringify(body),
-            })
+            });
+
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
-            return await response.json();
+
+            const responseData = await response.json();
+            return responseData;
+
         } catch (err) {
             console.error('Failed to fetch data: ', err);
             return null;
         }
     }
+
 
     async deleteData(post_id) {
         try {

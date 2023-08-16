@@ -16,7 +16,6 @@ export class HomeController {
     }
 
     loadStylesheet(componentsPath, pathName, componentName) {
-        console.log(`${componentsPath}/${pathName}/style/${componentName}.css`);
         var link = document.createElement("link");
         link.rel = "stylesheet";
         link.href = `${componentsPath}/${pathName}/style/${componentName}.css`;
@@ -24,7 +23,6 @@ export class HomeController {
     }
 
     async loadHTML(componentsPath, pathName, componentName) {
-        console.log(`${componentsPath}/${pathName}/html/${componentName}.html`);
         try {
             const response = await fetch(`${componentsPath}/${pathName}/html/${componentName}.html`);
             if (response.status !== 200) {

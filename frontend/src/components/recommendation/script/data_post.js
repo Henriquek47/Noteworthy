@@ -1,11 +1,11 @@
 export  function createPost(post){
     const postContainer = document.getElementById('postContainer');
-    console.log(postContainer);
     postContainer.appendChild(createTemplate(post));
 }
 
 
 function createTemplate(post){
+    console.log(post.id);
     const template = document.createElement('template');
         template.innerHTML = `
         <hr class="separator">    

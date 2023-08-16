@@ -9,16 +9,6 @@
  */
 (self["webpackChunkfrontend"] = self["webpackChunkfrontend"] || []).push([["src_views_payment_script_payment_controller_js"],{
 
-/***/ "./src/service/data/data.js":
-/*!**********************************!*\
-  !*** ./src/service/data/data.js ***!
-  \**********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ API)\n/* harmony export */ });\nclass API {\r\n    constructor(url) {\r\n        this.url = url;\r\n    }\r\n\r\n    async getData(pathParameters) {\r\n        try {\r\n            const response = await fetch(`${this.url}${pathParameters != null ? `/${pathParameters}` : ''}`, { headers: {\r\n                \"Content-Type\": \"application/json\"\r\n                // Você pode adicionar mais cabeçalhos aqui, se necessário\r\n            } });\r\n            console.log(response);\r\n            if (!response.ok) {\r\n                throw new Error(`HTTP error! status: ${response.status}`);\r\n            }\r\n            return await response.json();\r\n        } catch (err) {\r\n            console.error('Failed to fetch data: ', err);\r\n        }\r\n    }\r\n\r\n    async postData(body) {\r\n        console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaa');\r\n        try {\r\n            const response = await fetch(this.url, {\r\n                method: 'POST',\r\n                headers: {\r\n                    \"Content-Type\": \"application/json\"\r\n                    // Você pode adicionar mais cabeçalhos aqui, se necessário\r\n                },\r\n                body: JSON.stringify(body),\r\n            })\r\n            if (!response.ok) {\r\n                throw new Error(`HTTP error! status: ${response.status}`);\r\n            }\r\n            return await response.json();\r\n        } catch (err) {\r\n            console.error('Failed to fetch data: ', err);\r\n            return null;\r\n        }\r\n    }\r\n\r\n    async deleteData(post_id) {\r\n        try {\r\n            const response = await fetch(`${this.url}/${post_id}`, {\r\n                method: 'DELETE',\r\n                headers: {\r\n                    \"Content-Type\": \"application/json\"\r\n                    // Você pode adicionar mais cabeçalhos aqui, se necessário\r\n                },\r\n            })\r\n            if (!response.ok) {\r\n                throw new Error(`HTTP error! status: ${response.status}`);\r\n            }\r\n            return await response.json();\r\n        } catch (err) {\r\n            console.error('Failed to fetch data: ', err);\r\n            return null;\r\n        }\r\n    }\r\n}\r\n\n\n//# sourceURL=webpack://frontend/./src/service/data/data.js?");
-
-/***/ }),
-
 /***/ "./src/views/payment/script/payment_controller.js":
 /*!********************************************************!*\
   !*** ./src/views/payment/script/payment_controller.js ***!

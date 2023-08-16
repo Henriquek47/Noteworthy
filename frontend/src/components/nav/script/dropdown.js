@@ -16,6 +16,17 @@ export default function toggleDropdown() {
   }
 }
 
+export async function logout(callApi){
+  const login = document.querySelector(".login a");
+  login.addEventListener("click", async function (event) {
+    if(login.textContent === 'Sair'){
+      await callApi.postData();
+      login.textContent = 'Login';
+      login.href = 'http://127.0.0.1:5501/frontend/src/views/home/html/index.html'
+    }
+  })
+}
+
 export function toggleDropdownMenu() {
   const dropdownMenu = document.querySelectorAll(".menu");
   const icon = document.querySelector(".search-box img");

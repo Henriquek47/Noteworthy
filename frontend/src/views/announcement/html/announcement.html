@@ -7,20 +7,21 @@
     <script type="module" src="../../../../dist/main.js"></script>
     <title>Document</title>
 </head>
-<body>
+<body data-controller="announcement">
     <div id="nav-bar"></div>
     <div class="content-wrapper">
         <div class="form-container">
             <div class="form-left">
                 <div class="image-box">                    
                     <div class="add-image">+</div>
+                    <input id="imageInput" type="file" name="files[]" accept="image/*" style="opacity: 0; height: 100%; width: 100%; position: relative; top: -80px;">
                 </div>
                 <div class="image-box2">
 
                 </div>
             </div>
             <div class="form-right">
-                <form>
+                <form id="announcement-form">
                     <label for="produto"></label>
                     <input class="row" id="produto" name="produto" required placeholder="Nome do Produto:"><br><br>
                     
@@ -45,8 +46,8 @@
                         <option value="normal">Normal</option>
                         <option value="expresso">Expresso</option>
                     </select><br><br>
+                    <button type="submit" class="confirm-button">Confirmar</button>
                 </form>
-                <button type="submit" class="confirm-button">Confirmar</button>
             </div>           
         </div>
 

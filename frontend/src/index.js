@@ -1,18 +1,35 @@
-import toggleDropdown, { toggleDropdownMenu } from "./components/nav/script/dropdown.js";
+import toggleDropdown, { logout, toggleDropdownMenu } from "./components/nav/script/dropdown.js";
 import expandedSearch from "./components/nav/script/expanded-search.js";
+import API from "./service/data/data.js";
 
 class Index {
     constructor() {
+        this.apiToken = new API("http://localhost/verify-token");
+        this.apiLogout = new API("http://localhost/logout");
         this.loadNavBar('nav-bar', 'nav')
         this.loadControllerForCurrentPage();
     }
 
 
-    authVerify(pageName) {
-        const isLoggin = true;
-        console.log(pageName !== 'categories' && pageName !== 'home' && isLoggin === false  )
-        if (pageName !== 'categories' && pageName !== 'home' && isLoggin === false) {
-            window.location.href = '/frontend/src/views/home/html/home.html';
+    async authVerify(pageName) {
+        var isLoggin = false;
+        const token = await this.apiToken.getData();
+        const login = document.querySelector('.login a');
+        console.log(isLoggin);
+        if(token['error'] === 'Token not provided.' || token['error'] === 'Invalid token.' ){
+            login.textContent = 'Login';
+            login.href = 'http://127.0.0.1:5501/frontend/src/views/login/html/login.html'
+            isLoggin = false;
+        }else{
+            login.textContent = 'Sair';
+            login.href = 'http://127.0.0.1:5501/frontend/src/views/login/html/login.html'
+            isLoggin = true;
+        }
+        if (pageName === 'announcement' && isLoggin === false) {
+            window.location.href = 'http://127.0.0.1:5501/frontend/src/views/home/html/index.html';
+            return false;
+        } else if((pageName === 'register' || pageName === 'login') && isLoggin === true){
+            window.location.href = 'http://127.0.0.1:5501/frontend/src/views/home/html/index.html';
             return false;
         }
         return true;
@@ -23,7 +40,7 @@ class Index {
         let controllerName = document.body.dataset.controller;
 
         if(controllerName){
-            const check = this.authVerify(controllerName);
+            const check = await this.authVerify(controllerName);
             if(check){
                 await this.loadController(controllerName);
             }
@@ -55,6 +72,7 @@ class Index {
         toggleDropdown();
         toggleDropdownMenu();
         expandedSearch();
+        logout(this.apiLogout)
     }
     
     loadStylesheet(componentsPath, pathName, componentName) {
