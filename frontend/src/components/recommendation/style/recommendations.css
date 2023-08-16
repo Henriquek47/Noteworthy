@@ -1,10 +1,13 @@
 #postContainer{
   font-family: cursive;
+  
 }
 .container {
     text-align: center;
     position: relative;
     padding-bottom: 40px;
+    overflow: hidden;
+
   }
 
   .select-wrapper {
@@ -13,6 +16,7 @@
     left: 5em;
     width: 100%;
     overflow: hidden;
+    
   }
 
   .custom-select {

@@ -11,6 +11,7 @@ export class AnnouncementController {
         document.getElementById('announcement-form').addEventListener('submit', async function (event) {
             event.preventDefault();
             console.log('teste');
+            const user = await self.apiToken.getData();
             const produtoElement = document.getElementById('produto').value;
             const descricaoElement = document.getElementById('descricao').value;
             const instrumentoElement = document.getElementById('instrumento').value;
@@ -21,7 +22,7 @@ export class AnnouncementController {
                 'pictures': null,
                 'description': descricaoElement,
                 'authorId': 1,
-                'authorName': 'ddsadas',
+                'authorName': user['user']['username'],
                 'instrument': instrumentoElement,
                 'price': precoElement,
                 'shipping': tipoEnvioElement,
