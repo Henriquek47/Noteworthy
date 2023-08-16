@@ -67,6 +67,10 @@ p{
   padding-bottom: 20px;
 }
 
+.photo img{
+  border-radius: 10px;
+}
+
 .info {
     text-align: left;        
     padding-left: 30px;
@@ -118,6 +122,7 @@ p{
     position: relative;
     right: 235px;
     top: 10px;
+    
 }
 .price {
     position: relative;
@@ -137,8 +142,8 @@ p{
 }
 
 .separator{
-    width: 100%;
-    background-color: rgb(240, 0, 0);
+    width: 99%;
+    border: 1px solid rgb(70, 70, 70);
 }
 
 .buttons {

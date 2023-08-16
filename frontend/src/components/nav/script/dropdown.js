@@ -19,10 +19,14 @@ export default function toggleDropdown() {
 export async function logout(callApi){
   const login = document.querySelector(".login a");
   login.addEventListener("click", async function (event) {
+    event.preventDefault();
     if(login.textContent === 'Sair'){
-      await callApi.postData();
+       await callApi.postData();
+       window.location.href = 'http://127.0.0.1:5501/frontend/src/views/login/html/login.html'
       login.textContent = 'Login';
       login.href = 'http://127.0.0.1:5501/frontend/src/views/home/html/index.html'
+    }else{
+      window.location.href = 'http://127.0.0.1:5501/frontend/src/views/login/html/login.html'
     }
   })
 }

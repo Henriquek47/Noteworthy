@@ -5,11 +5,18 @@ export class RegisterController {
         this.apiLogin = new API("http://localhost/signup");
     }
 
+    
+    
+
     async sendSignUp() {
         const self = this;
         document.getElementById('signup-form').addEventListener('submit', async function (event) {
             event.preventDefault();
             const emailElement = document.getElementById('email').value;
+            if (!isValidEmail(emailElement)) {
+                alert('Por favor, insira um email válido.');
+                return;
+            }
             const nomeElement = document.getElementById('nome').value;
             const bairroElement = document.getElementById('bairro').value;
             const ruaElement = document.getElementById('rua').value;
@@ -30,7 +37,7 @@ export class RegisterController {
                     'complement': '',
                 },
             }).then((value) => {
-                if(value['message'] === "User created successfully!"){
+                if (value['message'] === "User created successfully!") {
                     window.location.href = 'http://127.0.0.1:5501/frontend/src/views/home/html/index.html';
                 }
             })
@@ -41,4 +48,10 @@ export class RegisterController {
     async init() {
         await this.sendSignUp();
     }
+}
+
+
+function isValidEmail(email) {
+    const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    return re.test(email);
 }

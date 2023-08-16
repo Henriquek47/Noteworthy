@@ -28,9 +28,6 @@ class Index {
         if (pageName === 'announcement' && isLoggin === false) {
             window.location.href = 'http://127.0.0.1:5501/frontend/src/views/home/html/index.html';
             return false;
-        } else if((pageName === 'register' || pageName === 'login') && isLoggin === true){
-            window.location.href = 'http://127.0.0.1:5501/frontend/src/views/home/html/index.html';
-            return false;
         }
         return true;
     }
