@@ -5,12 +5,11 @@ export function createDetails(details) {
 
 
 function createTemplate(details) {
-    console.log(`${details.title}`)
     const template = document.createElement('template');
     template.innerHTML = `
         <div class="container">
             <div class="img-background">
-                <img src="http://localhost/post/${details.id}/image" alt="Guitarra" crossorigin="anonymous">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHSJsQiez78jIXhwnntiIEsfM3_Dpj0I23_pRanEQRUqqvvHaJ_V4Iwc-312TxL4WJSto&usqp=CAU" alt="Guitarra" crossorigin="anonymous">
             </div>
             <div class="info-wrapper">
                 <div class="info">
@@ -21,6 +20,7 @@ function createTemplate(details) {
                 <div class="info2">
                     <h2>R$${details.price}</h2>
                     <button onclick="handlePayment()" class="buy">Comprar</button>
+                    <button class="delete">Deletar</button>
                 </div>
             </div>
             <div class="description-container">

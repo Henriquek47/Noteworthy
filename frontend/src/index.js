@@ -15,7 +15,7 @@ class Index {
         var isLoggin = false;
         const token = await this.apiToken.getData();
         const login = document.querySelector('.login a');
-        console.log(isLoggin);
+        console.log(token);
         if(token['error'] === 'Token not provided.' || token['error'] === 'Invalid token.' ){
             login.textContent = 'Login';
             login.href = 'http://127.0.0.1:5501/frontend/src/views/login/html/login.html'
